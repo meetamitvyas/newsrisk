@@ -1,0 +1,231 @@
+***************************************************************************************************************************
+		Before we start coding, let me explain what NewsRisk is and why it matters — slow and steady as always.
+
+		What is NewsRisk — in plain English:
+		Every day, thousands of financial news headlines are published:
+
+		"Apple reports record quarterly earnings" — positive
+		"Federal Reserve raises interest rates again" — negative for stocks
+		"JPMorgan faces regulatory investigation" — very negative
+		"Goldman Sachs beats analyst expectations" — positive
+--------------------------------------------------------------------------------------------------------------------------	
+		NewsRisk will:
+
+		Fetch real financial news headlines from the internet
+		Automatically classify each headline as Positive, Negative, or Neutral
+		Show which companies are getting the most positive/negative coverage
+		Connect news sentiment to stock price movements
+		Answer questions about the news using a simple chatbot
+
+--------------------------------------------------------------------------------------------------------------------------	
+		What new skill does this add to your portfolio:
+		Previous projectsNewsRisk addsStructured data (tables, numbers)Unstructured data (text, language)Numerical ML (XGBoost, Prophet)NLP — Natural Language ProcessingKnown labels (defaulted yes/no)Automatic labelling using sentiment
+		NLP (Natural Language Processing) is the branch of AI that deals with text and language. It is a critical skill for AI/ML roles in 2026 — especially for GenAI work.
+--------------------------------------------------------------------------------------------------------------------------	
+		The tool we will use — VADER + Transformers:
+		Two approaches, both free:
+		VADER (Valence Aware Dictionary and sEntiment Reasoner):
+
+		Rule-based sentiment analysis
+		Very fast — analyses thousands of headlines in seconds
+		Works well for short financial headlines
+		No model training needed
+--------------------------------------------------------------------------------------------------------------------------	
+		Transformers (FinBERT):
+
+		A BERT model specifically fine-tuned on financial text
+		More accurate than VADER for financial language
+		Understands domain-specific phrases like "beats expectations" or "misses guidance"
+		Slower but much more powerful
+
+		We will use both and compare their results — showing you understand trade-offs between speed and accuracy.
+
+		One question before we start:
+		In your own words — what do you think "sentiment" means in the context of financial news? Just one sentence.
+		
+--------------------------------------------------------------------------------------------------------------------------		
+		
+		In financial NLP specifically — sentiment means:
+		Positive — news likely to make investors feel confident → stock price may rise
+		Negative — news likely to make investors feel worried → stock price may fall
+		Neutral — informational news with no clear emotional direction
+--------------------------------------------------------------------------------------------------------------------------	
+		Now let's write our first NewsRisk script.
+		But first — what is VADER, in plain English:
+		VADER stands for Valence Aware Dictionary and sEntiment Reasoner. It is a list of ~7,500 words, each with a pre-assigned sentiment score:
+
+		"excellent" → +0.9 (very positive)
+		"fraud" → -0.8 (very negative)
+		"announced" → 0.0 (neutral)
+		"beats" → +0.6 (positive in financial context)
+
+		When you give VADER a sentence, it adds up the scores of all the words and returns a final score between -1 (very negative) and +1 (very positive).
+		Why VADER is good for financial headlines:
+
+		Very fast — analyses thousands of headlines in seconds
+		No training needed — works out of the box
+		Handles capitalisation (BEATS vs beats), punctuation (!!!), and negation (not good)	
+--------------------------------------------------------------------------------------------------------------------------		
+		NewsRisk — complete project plan:
+		01_vader_sentiment.py      ← learn VADER basics (what we're doing now)
+		02_finbert_sentiment.py    ← learn FinBERT (more accurate, finance-specific)
+		03_fetch_real_news.py      ← fetch real financial news from the internet
+		04_compare_models.py       ← compare VADER vs FinBERT accuracy
+		05_company_sentiment.py    ← analyse sentiment per company over time
+		06_sentiment_vs_price.py   ← correlate news sentiment with stock price moves
+		07_sentiment_api.py        ← FastAPI backend (like FinSight AI)
+		08_sentiment_ui.html       ← HTML frontend form (exactly like you suggested)
+		The HTML frontend (Step 8) will:
+
+		Have a text box where users paste any news headline
+		Click "Analyse Sentiment"
+		Instantly show: Positive/Negative/Neutral label + confidence score + which words drove the sentiment
+		Also show a company dropdown to see overall sentiment trend for that company
+
+
+		So yes — your instinct is exactly right and it was already in the plan.
+		The difference from FinSight AI's frontend is that this one will show explainability — not just "NEGATIVE" but WHY — which words made it negative. That is a genuine advancement in the project.
+--------------------------------------------------------------------------------------------------------------------------
+***************************************************************************************************************************
+#STEP 1
+
+		Now let's initialise Git and connect to GitHub.
+		In the VS Code terminal:
+		git init
+		git config --global --add safe.directory C:/ML-Projects/newsrisk
+		
+		Then create a .gitignore file:
+		New-Item .gitignore
+		code .gitignore
+		
+		Add these lines:
+		venv/
+		__pycache__/
+		*.pyc
+		data/
+		*.csv
+		*.json
+		Save with Ctrl+S.
+		
+		Then:
+		git add .
+		git commit -m "Initial commit - NewsRisk project setup"
+		Then go to GitHub, create a new repository called newsrisk (Public, no checkboxes), and come back with the URL.
+		
+		
+	Let's initialise Git for StockSense:
+	git init
+	git config --global user.name "meetamitvyas"
+	git config --global user.email "your-github-email@gmail.com"
+	
+	Then create a .gitignore file:
+	New-Item .gitignore
+	code .gitignore
+	
+	Add these lines to .gitignore:
+	venv/
+	__pycache__/
+	*.pyc
+	*.pkl
+	data/
+	mlruns/
+	Save with Ctrl+S.
+	Then our first commit:
+	git add .
+	git commit -m "Initial commit - StockSense project setup"
+***************************************************************************************************************************
+#STEP 2
+
+		Now connect your local project to GitHub. In your VS Code terminal type these one at a time:
+		git branch -M main
+		git remote add origin https://github.com/meetamitvyas/newsrisk.git
+		git push -u origin main
+		
+		Error: Solution
+		venv has been removed from Git tracking. ✅
+		Now let's also fix this for the finsight-ai and stocksense projects to make sure they also have clean .gitignore files going forward.
+		But first — let's also add a global .gitignore so this never happens again on ANY future project on your machine.
+		Run this in your terminal:
+		New-Item "$env:USERPROFILE\.gitignore_global" -Force
+		Add-Content "$env:USERPROFILE\.gitignore_global" "venv/"
+		Add-Content "$env:USERPROFILE\.gitignore_global" "__pycache__/"
+		Add-Content "$env:USERPROFILE\.gitignore_global" "*.pyc"
+		Add-Content "$env:USERPROFILE\.gitignore_global" "~$*"
+		Add-Content "$env:USERPROFILE\.gitignore_global" ".env"
+		git config --global core.excludesfile "$env:USERPROFILE\.gitignore_global"
+		This creates a global gitignore that applies to every Git project on your machine — so venv, pycache, and Excel temp files are automatically ignored everywhere, every time.
+		
+		Error not solved, venv folder still getting pushed to github Repo newsrisk
+		I think I should start from scratch again
+		12:14 pm
+
+		That's actually the cleanest solution. Let's do it properly this time.
+
+		Step 1 — Delete the GitHub repository:
+
+			Go to https://github.com/meetamitvyas/newsrisk
+			Click Settings
+			Scroll to the very bottom — Danger Zone
+			Click Delete this repository
+			Confirm by typing the repo name
+
+		Step 2 — Delete the local folder:
+
+		cd C:\ML-Projects
+		Remove-Item newsrisk -Recurse -Force
+
+		Step 3 — Create fresh with correct gitignore FIRST:
+
+		mkdir newsrisk
+		cd newsrisk
+
+		Create .gitignore BEFORE creating venv:
+
+		New-Item .gitignore
+		Add-Content .gitignore "venv/"
+		Add-Content .gitignore "__pycache__/"
+		Add-Content .gitignore "*.pyc"
+		Add-Content .gitignore "~$*"
+
+		Step 4 — NOW create venv:
+
+		python -m venv venv
+		venv\Scripts\activate
+
+		Step 5 — First commit with only .gitignore:
+
+		git init
+		git config --global --add safe.directory C:/ML-Projects/newsrisk
+		git add .gitignore
+		git commit -m "Initial commit - gitignore first"
+
+		Step 6 — Create GitHub repo and push:
+		Go to GitHub, create newsrisk repository (Public, no checkboxes), then:
+
+		git branch -M main
+		git remote add origin https://github.com/meetamitvyas/newsrisk.git
+		git push -u origin main
+
+		Tell me when done — then verify GitHub shows ONLY .gitignore, no venv folder.
+		
+***************************************************************************************************************************
+#STEP 3
+
+The lesson learned — always create .gitignore BEFORE creating venv. This is the correct order every single time for every future project.
+
+Now let's install our libraries:
+pip install pandas requests vaderSentiment matplotlib yfinance
+***************************************************************************************************************************
+#STEP 4
+
+
+***************************************************************************************************************************
+#STEP 5
+
+***************************************************************************************************************************
+#STEP 6
+
+***************************************************************************************************************************
+#STEP 7
+
+***************************************************************************************************************************
