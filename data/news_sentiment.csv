@@ -1,0 +1,51 @@
+company,ticker,headline,source,published,vader_label,vader_score
+Apple,AAPL,"Apple Watch Ultra 3 is $99 off right now, but these Ultra 2 refurbs are $420 off the orig. list",9to5Toys,2026-06-18,NEUTRAL,0.0
+Apple,AAPL,Intel shares rally after Trump announces chip production for Apple in US,Crypto Briefing,2026-06-18,POSITIVE,0.296
+Apple,AAPL,"Trump says Apple to partner with Intel on US chip design, production - Reuters",Slashdot.org,2026-06-18,NEUTRAL,0.0
+Apple,AAPL,"Missing Woman, Endless Questions: David Morrissey Stars in ""Gone"" - BritBox's Latest Gripping Crime Thriller",Thefutoncritic.com,2026-06-18,NEGATIVE,-0.6486
+Apple,AAPL,Best Apple Watch Prime Day Deals 2026: The best early discounts,Macworld,2026-06-18,POSITIVE,0.8555
+Apple,AAPL,"Comparative Study: Apple And Industry Competitors In Technology Hardware, Storage & Peripherals Industry",Biztoc.com,2026-06-18,NEUTRAL,0.0
+Apple,AAPL,"Stephen King has big praise for new Apple TV show, but it's not Widow's Bay: ""It's like Hitchcock came back to do it one more time""",GamesRadar+,2026-06-18,POSITIVE,0.6757
+Apple,AAPL,"Lenovo unveils mini PC with ARM chip and over 8,000 AI skills",Notebookcheck.net,2026-06-18,NEUTRAL,0.0
+Apple,AAPL,Pro Chefs Consider These 20 Kitchen Tools a Joke. Here's What They Use Instead,CNET,2026-06-18,POSITIVE,0.296
+Apple,AAPL,What Apple Didn’t Tell You About iPadOS 27,Geeky Gadgets,2026-06-18,NEUTRAL,0.0
+JPMorgan,JPM,US Justice Department investigates Wall Street banks’ ties to Iranian Supreme Leader’s finances,Crypto Briefing,2026-06-18,POSITIVE,0.7906
+JPMorgan,JPM,JPMorgan Chase cuts off Anthropic access for its Hong Kong staff - Financial Times,Slashdot.org,2026-06-18,NEGATIVE,-0.296
+JPMorgan,JPM,JPMorgan cuts off Anthropic access for Hong Kong staff,The Next Web,2026-06-18,NEGATIVE,-0.296
+JPMorgan,JPM,JPMorgan Chase cuts off Anthropic access for its Hong Kong staff,Biztoc.com,2026-06-18,NEGATIVE,-0.296
+JPMorgan,JPM,Athena Coalition Brings Coordinated Defence to Open Source Security,InfoQ.com,2026-06-18,POSITIVE,0.4215
+JPMorgan,JPM,China AI Lab’s 170% Stock Surge Cements Winner-Loser Pair Trade,Financial Post,2026-06-18,NEUTRAL,0.0
+JPMorgan,JPM,JPMorgan Chase cuts off Anthropic access for its Hong Kong staff,Biztoc.com,2026-06-18,NEGATIVE,-0.296
+JPMorgan,JPM,JPMorgan’s Ward Says Falling Oil Can Unleash European Stocks,Financial Post,2026-06-18,NEGATIVE,-0.1531
+JPMorgan,JPM,Blackstone’s AirTrunk Seeks $3 Billion Loan for Sydney Project,Financial Post,2026-06-18,NEUTRAL,0.0
+JPMorgan,JPM,The SpaceX IPO Is A Giant Unworkable Con Orchestrated By An Overt White Supremacist Huckster,Karlbode.com,2026-06-18,NEGATIVE,-0.1027
+Goldman Sachs,GS,JPMorgan Chase cuts off Anthropic access for its Hong Kong staff - Financial Times,Slashdot.org,2026-06-18,NEGATIVE,-0.296
+Goldman Sachs,GS,"Goldman Sachs initiates Talen Energy at Buy with $499 price target, citing nuclear power and AI demand",Crypto Briefing,2026-06-18,POSITIVE,0.1531
+Goldman Sachs,GS,Goldman Sachs Warns Strait of Hormuz Traffic May Never Fully Recover,OilPrice.com,2026-06-18,NEGATIVE,-0.1027
+Goldman Sachs,GS,"EQT to acquire Exolaunch, a Germany-based satellite deployment technology and launch mission management firm powering global access to space",PRNewswire,2026-06-18,NEUTRAL,0.0
+Goldman Sachs,GS,Goldman Sachs says buy these 16 tech stocks positioned to win as an AI-capex supercycle juices earnings,Yahoo Entertainment,2026-06-18,POSITIVE,0.5859
+Goldman Sachs,GS,Goldman Sachs says buy these 16 tech stocks positioned to win as an AI-capex supercycle juices earnings,Business Insider,2026-06-18,POSITIVE,0.5859
+Goldman Sachs,GS,Goldman says PBOC corridor to limit funding rate declines,Biztoc.com,2026-06-18,NEUTRAL,0.0
+Goldman Sachs,GS,JPMorgan cuts off Anthropic access for Hong Kong staff,The Next Web,2026-06-18,NEGATIVE,-0.296
+Goldman Sachs,GS,Kim Kardashian’s Skims has no business being this good,CNA,2026-06-18,POSITIVE,0.2903
+Goldman Sachs,GS,"Cover Corp. just downgraded at Goldman Sachs, here's why",Thefly.com,2026-06-18,NEUTRAL,0.0
+Visa,V,EXCLUSIVE: CBS Mornings' Last Laugh on Stephen Colbert — How Show Bosses Completely Ignored 'Late Show' Host's Long Goodbye,Radaronline.com,2026-06-18,POSITIVE,0.5007
+Visa,V,"Locked Out of the World Cup: A Year Marked by Barriers, Borders, and Broken Access",Wired,2026-06-18,NEGATIVE,-0.4767
+Visa,V,Expats beware! These are the least-welcoming countries for Brits to move to,Dailymail.com,2026-06-18,NEUTRAL,0.0
+Visa,V,"Jonny has spent $12,000 trying to become a permanent resident in Australia... he says the price is getting to be too much",Dailymail.com,2026-06-18,NEUTRAL,0.0
+Visa,V,Türkiye denounces European Parliament report as biased,Hurriyet Daily News,2026-06-18,NEGATIVE,-0.6124
+Visa,V,87% of Merchants Say Checkout Still Falls Short,Biztoc.com,2026-06-18,NEUTRAL,0.0
+Visa,V,Cape Verde’s World Cup fairy tale puts 40-year-old goalkeeper Vozinha on the global stage,Crypto Briefing,2026-06-18,NEUTRAL,0.0
+Visa,V,The Man Who Could Keep Colombia’s Left in Power,Thenation.com,2026-06-18,NEUTRAL,0.0
+Visa,V,Trump-Modi bromance back on display in meeting on sidelines of G7,CNBC,2026-06-18,NEUTRAL,0.0
+Visa,V,Top stars shine but a raft of draws after first World Cup group games,Dpa-international.com,2026-06-18,POSITIVE,0.1027
+Mastercard,MA,Yilo Krobo Assembly Records Major Development Gains,Thechronicle.com.gh,2026-06-18,POSITIVE,0.3976
+Mastercard,MA,The Honor Watch 6 wants to outlast your next vacation,Android Central,2026-06-18,POSITIVE,0.4939
+Mastercard,MA,The new Honor Watch 6 packs a massive 980mAh battery in a slender 10.8mm body,GSMArena.com,2026-06-18,POSITIVE,0.4939
+Mastercard,MA,Ready USDC Card Halts Non-EEA Service Following Card Issuer Transition,newsBTC,2026-06-18,POSITIVE,0.3612
+Mastercard,MA,Visa and Mastercard Put Tokens in Charge of AI Commerce,Biztoc.com,2026-06-18,NEUTRAL,0.0
+Mastercard,MA,Visa and Mastercard Put Tokens in Charge of AI Commerce,pymnts.com,2026-06-17,NEUTRAL,0.0
+Mastercard,MA,"Consumers are doing well in navigating the current economic environment, says Mastercard's Meyer",Biztoc.com,2026-06-17,POSITIVE,0.2732
+Mastercard,MA,Main Street Finally Sees What Wall Street Always Could,pymnts.com,2026-06-17,NEUTRAL,0.0
+Mastercard,MA,"2026 MLB All-Star Ballot First Update: Ohtani Leads, Yordan Tops NL",Fox Sports,2026-06-17,POSITIVE,0.5106
+Mastercard,MA,"Google, Microsoft, and OpenAI Back Linux Foundation's Appia AI Standards Initiative",Slashdot.org,2026-06-17,NEUTRAL,0.0
